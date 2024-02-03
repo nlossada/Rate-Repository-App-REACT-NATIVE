@@ -1,14 +1,29 @@
-import react from "react"
-import { View, TouchableWithoutFeedback, Text } from "react-native"
+import React from "react"
+import { View } from "react-native"
 import RepositoryList from "./RepositoryList";
-import Constants from "expo-constants"
+import AppBar from "./AppBar";
+import { Route, Routes } from "react-router-native";
+import Signin from "./Signin";
+
 
 
 function Main() {
     return (
-        <View style={{ marginTop: Constants.statusBarHeight, flexGrow: 1 }}>
-            <Text>Rate Repository App</Text>
-            <RepositoryList></RepositoryList>
+        <View style={{ flex: 1 }}>
+            <AppBar />
+            <Routes>
+                <Route
+                    path="/"
+                    element={<RepositoryList />}>
+
+                </Route>
+                <Route
+                    path="/signin"
+                    element={<Signin />}>
+
+                </Route>
+            </Routes>
+
 
         </View>
     )

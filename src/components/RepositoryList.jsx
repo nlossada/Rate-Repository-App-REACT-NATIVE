@@ -11,7 +11,7 @@ function RepositoryList() {
             ItemSeparatorComponent={() => <Text> </Text>}
             //metodo de como renderizar cada item - le cambio nombre a repo porque ya esta con ese nombre
             renderItem={({ item: repo }) =>
-                <RepositoryItem repo={repo} />
+                <RepositoryItem {...repo} />
             }
         >
         </FlatList>

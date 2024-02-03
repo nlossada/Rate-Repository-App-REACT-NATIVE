@@ -1,13 +1,13 @@
 import React from "react"
 import { View, Text, StyleSheet } from "react-native"
-import theme from "./theme"
+import theme from "./theme.js"
 
 
 const styles = StyleSheet.create({
     text: {
         fontSize: theme.fontSizes.body,
         color: theme.colors.textPrimary,
-        fontFamily: theme.fonts,
+        fontFamily: theme.fonts.main,
         fontWeight: theme.fontWeigths.normal
     },
     bold: {
@@ -19,26 +19,21 @@ const styles = StyleSheet.create({
     colorSecondary: {
         color: theme.colors.textSecondary
     },
-    green: {
-        color: "#6f7357"
-    },
     big: {
         fontSize: theme.fontSizes.subheading
     },
 
 })
 
-export default function StyledText({ children, color, fontSize, fontWeight, style, ...restOfProps }) {
+export default function StyledText({ children, color, fontSize,
+    fontWeight, style, ...restOfProps }) {
     const textStyles = [
-        //min 53.45
-        // styles.text,
-        //color === "primary" && styles.colorPrimary,
-
-        // bold && styles.bold,
-        // pink && styles.pink,
-        // green && styles.green,
-        // big && styles.big,
-        // small && styles.small
+        styles.text,
+        color === "primary" && styles.colorPrimary,
+        color === "secondary" && styles.colorSecondary,
+        fontSize === "subheading" && styles.subheading,
+        fontWeight === "bold" && styles.bold,
+        style
     ]
 
     return (

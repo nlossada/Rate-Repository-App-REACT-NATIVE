@@ -1,34 +1,33 @@
 import React from "react"
-import { View, StyleSheet } from "react-native"
-import StyledText from "./StyledText"
+import { View, StyleSheet, Image } from "react-native"
+import RespositoryStats from "./RespositoryStats"
+import RepositoryItemHeader from "./RepositoryItemHeader"
 
 
 
-function RepositoryItem({ repo }) {
+
+function RepositoryItem(props) {
     return (
 
-        <View key={repo.id} style={styles.container}>
-            <StyledText big bold pink>Id: {repo.id}</StyledText>
-            <StyledText green>Name: {repo.fullname}</StyledText>
-            <StyledText green>Description: {repo.description}</StyledText>
-            <StyledText green>Language: {repo.language}</StyledText>
-            <StyledText small>Forks: {repo.forksCounts}</StyledText>
-            <StyledText small>Review: {repo.reviewCount}</StyledText>
-            <StyledText small>Rating: {repo.ratingAverage}</StyledText>
+        <View key={props.id} style={styles.container}>
+
+            <RepositoryItemHeader {...props} />
+            <RespositoryStats {...props} />
+
         </View>
 
-
     )
-    //<Scroll> para texto solo
 }
 
-//o archivo aparte - FORMA RECOMENDADA
+
+
+//ESTILOS: o archivo aparte 
 const styles = StyleSheet.create({
     container: {
         padding: 20,
         paddingBottom: 5,
         paddingTop: 10
-    }
+    },
 })
 
 export default RepositoryItem;
