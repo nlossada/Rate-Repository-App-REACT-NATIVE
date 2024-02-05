@@ -3,7 +3,7 @@ import { View } from "react-native"
 import RepositoryList from "./RepositoryList";
 import AppBar from "./AppBar";
 import { Route, Routes } from "react-router-native";
-import Signin from "./Signin";
+import Signin from "../pages/Signin";
 
 
 

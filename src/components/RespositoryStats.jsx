@@ -15,7 +15,7 @@ const RespositoryStats = (props) => {
         <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
             <View>
                 <StyledText fontWeight="bold">Forks:</StyledText>
-                <StyledText>{parseThousands(props.forksCounts)}</StyledText>
+                <StyledText>{parseThousands(props.forksCount)}</StyledText>
             </View>
 
             <View>
